@@ -1,5 +1,12 @@
 # Golang Pub-Sub With Redis
 
+## Todo 😪
+
+- [ ] read redis pub-sub
+- [ ] make multiple servers
+  - [ ] make docker file to run all severs through docker-compose
+- [ ] pass message between different servers.
+
 ## Interacting with Redis
 
 While running the redis docker container, get the redis docker container name.
