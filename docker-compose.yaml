@@ -1,5 +1,29 @@
 version: "3.8"
 services:
+  go_pubsub_1:
+    container_name: go_pubsub_1
+    build: .
+    restart: always
+    environment:
+      - PORT=8881
+    ports:
+      - 8881:8881
+  go_pubsub_2:
+    container_name: go_pubsub_2
+    build: .
+    restart: always
+    environment:
+      - PORT=8882
+    ports:
+      - 8882:8882
+  go_pubsub_3:
+    container_name: go_pubsub_3
+    build: .
+    restart: always
+    environment:
+      - PORT=8883
+    ports:
+      - 8883:8883
   redis:
     container_name: go-pubsub-redis
     image: redis:6.2-alpine
