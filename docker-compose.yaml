@@ -8,6 +8,8 @@ services:
       - PORT=8881
     ports:
       - 8881:8881
+    depends_on:
+      - redis
   go_pubsub_2:
     container_name: go_pubsub_2
     build: .
@@ -16,6 +18,8 @@ services:
       - PORT=8882
     ports:
       - 8882:8882
+    depends_on:
+      - redis
   go_pubsub_3:
     container_name: go_pubsub_3
     build: .
@@ -24,6 +28,8 @@ services:
       - PORT=8883
     ports:
       - 8883:8883
+    depends_on:
+      - redis
   redis:
     container_name: go-pubsub-redis
     image: redis:6.2-alpine
