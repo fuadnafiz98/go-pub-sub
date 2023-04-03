@@ -2,10 +2,31 @@
 
 ## Todo 😪
 
-- [ ] read redis pub-sub
-- [ ] make multiple servers
-  - [ ] make docker file to run all severs through docker-compose
-- [ ] pass message between different servers.
+### What's next??
+
+- [ ] Task queues with Redis
+  - [ ] Notification system?
+
+```txt
+Server-1 -> needs to to background task -> publishes a job to channel
+Server-2 -> subscribes to channel -> pushes task to list/sorted list
+Server-2 -> takes one task from the list
+            -> runs it
+            -> gets the result
+            -> send to a channel
+Server-1 -> susbscribes to a channel
+          -> gets result from Server-2
+          -> do whatever to do with the result.
+            -> send message to frontend with server-send-events
+```
+
+- [ ] event streams?
+- [ ] redis streams?
+
+- [x] read redis pub-sub
+- [x] make multiple servers
+  - [x] make docker file to run all severs through docker-compose
+- [x] pass message between different servers.
 
 ## Interacting with Redis
 
